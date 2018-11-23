@@ -7,29 +7,6 @@ Author: Keith Millar
 Date: 01/10/2018   
 Version: 0.1  
 
-- [Introduction](./SCTE%20104-35%20Signalling%20Generic%20design.md#1-introduction)
-- [High Level Requirements](./SCTE%20104-35%20Signalling%20Generic%20design.md#2-high-level-requirements)
-   - [Generic Requirements](./SCTE%20104-35%20Signalling%20Generic%20design.md#21-generic-requirements)
-   - [Carriage within (H)SDI](./SCTE%20104-35%20Signalling%20Generic%20design.md#22-carriage-within-hsdi)
-   - [SCTE-104 over TCP/IP connection to inserter (encoder)](./SCTE%20104-35%20Signalling%20Generic%20design.md#23-scte-104-over-tcpip-connection-to-inserter-encoder)
-   - [Inserter requirements](./SCTE%20104-35%20Signalling%20Generic%20design.md#24-inserter-requirements)
-- [Marker Solution Overview](./SCTE%20104-35%20Signalling%20Generic%20design.md#3-marker-solution-overview)
-   - [SCTE-104](./SCTE%20104-35%20Signalling%20Generic%20design.md#31-scte-104)
-   - [Multiple message flows](./SCTE%20104-35%20Signalling%20Generic%20design.md#311-multiple-message-flows)
-      - [Splice Insert Messages](./SCTE%20104-35%20Signalling%20Generic%20design.md#312-splice-insert-messages)
-      - [Multiple Segmentation Descriptors](./SCTE%20104-35%20Signalling%20Generic%20design.md#313-multiple-segmentation-descriptors)
-   - [SCTE-104 over VANC](./SCTE%20104-35%20Signalling%20Generic%20design.md#32-scte-104-over-vanc)
-      - [Multiple Segmentation Descriptors](./SCTE%20104-35%20Signalling%20Generic%20design.md#321-multiple-segmentation-descriptors)
-      - [Single message per frame](./SCTE%20104-35%20Signalling%20Generic%20design.md#322-single-message-per-frame)
-   - [SCTE-104 over TCP/IP](./SCTE%20104-35%20Signalling%20Generic%20design.md#33-scte-104-over-tcpip)
-- [Generic capabilities](./SCTE%20104-35%20Signalling%20Generic%20design.md#4-generic-capabilities)
-   - [PID mapping](./SCTE%20104-35%20Signalling%20Generic%20design.md#41-pid-mapping)
-   - [Message Aggregation](./SCTE%20104-35%20Signalling%20Generic%20design.md#42-message-aggregation)
-   - [SCTE-104 processing configurations](./SCTE%20104-35%20Signalling%20Generic%20design.md#43-scte-104-processing-configurations)
-- [SCTE-104/35 Message Types](./SCTE%20104-35%20Signalling%20Generic%20design.md#5-scte-10435-message-types)
-   - [Splice_Insert](./SCTE%20104-35%20Signalling%20Generic%20design.md#51-splice_insert)
-   - [Time_Signal](./SCTE%20104-35%20Signalling%20Generic%20design.md#52-time_signal)
-   - [Splice_Null Messages](./SCTE%20104-35%20Signalling%20Generic%20design.md#53-splice_null-messages)
 
 
 ## 1. Introduction
@@ -59,40 +36,76 @@ Signalled as HLG10
 
 10 bit
 
-### 2.4. Inserter requirements
-- Carriage of markers of different types (e.g. Splice Insert, Programme,
-Chapter, etc), on separate MPEG-PIDs within a service. Using
-PDI_PID_index of SCTE-104 to map to MPEG-PIDs.
-- Support for signalling if inserter (encoder) should perform stream
-conditioning for a given SCTE-104 messages.
-- Support for signalling if inserter (encoder) should process an SCTE
-message.
+### 2.4. Chroma Subsampling
 
-## 3. Marker Solution Overview
+4:2:2
 
-![Figure 2](https://github.com/ITV/SCTE-Signalling/blob/master/images/Example-scte-timeline.png)
+### 2.5. Frame
+
+Intra frame
+
+### 2.6. Frame Rate
+
+50 Hz, Progressive
+
+### 2.7. Colorimetry
+
+BT.2020 non-constant luminance
+
+### 2.8. Transfer Characteristics
+
+BT.2100
+
+### 2.9. Video range
+
+Narrow range only
 
 
-## 3.1. SCTE-104
+## 3. Encapsulation
+
+The AV data shall be encapsulated as an MPEG2 Single Program Transport Stream with a maximum bitrate of 100Mbits/s. 
+
+## 3.1. Video Encapsulation
+
+The Video frames shall be encapsulated using PES per Frame, with the start of a video frame starting in a new PES packet. 
+
+## 3.2. PSI
+
+The MPEG2-TS shall signal the Video component within the PMT by setting the “stream type” to  0x027 and including a “HEVC_video_decsriptor” (See ETSI TS 101 154 v.2.3.1, clause 4.1.8.19a) with the component declaration.
+
+
+## 4. Video Encoding
+
+The Video shall be encoding using HEVC (H265) using the “HEVC Main 10 Profile, Main Tier, Level 5.1” profile. The encoding shall be conformant to that defined by DVB in ETSI TS 101 154 v.2.3.1
+
+## 4.1. Signaling Transfer Characteristics
+
+HLG10 allows the signaling of “transfer characteristics” to enhance the picture quality. However if this feature is used the picture is unable to be rendered on a standard UHD TV. Therefore to support the maximum number of devices, “transfer characteristics” shall not be used.
+
+Note:  In the case of Mezzanine streams do we want to use “transfer Characteristics” as we can control the receiving device, performing the transcode. We should be trying to deliver the highest quality video we can.
+
+
+## 5. Audio Encoding
+
+The Audio shall be encoded as 5.1 Surround sound using AC3 audio.
+
+
+## 6. Subtitles
+
+
+
+## 7. Distribution
+
+The following delivery mechanisms are being considered:
+
+## 7.1. Zixi
+## 7.2  IP Multicast
+
+
 
 
 
 >> include multiple
 
-- The maximum size of a single SCTE-104 message is 2000 bytes in length
-([SMPTE.ST2010.2008](https://doi.org/10.5594/SMPTE.ST2010.2008) - multi-operation message). This may in the long
-term be limiting, if all markers had to be in one SCTE-104 message.
 
-
-
-## 4.3. SCTE-104 processing configurations
-The design shall allow an Inserter (encoder) to be configured with the set of
-SCTE-104 messages that it should process and also how it should process them.
-
-| Ignore Signal | Generate SCTE-35 | Stream Condition | Comments |  
-| ------------- | ---------------- | ---------------- | -------- |
-| No | No | Yes | Encoder will perform stream conditioning but will not insert an SCTE-35 Splice_insert message. |  
-| Yes | NA | NA | No action by encoder |
-| No | Yes | Yes | Encoder will perform stream conditioning and will insert an SCTE-35 Splice_insert message. |
-| No | Yes | No | Encoder will not perform stream conditioning, but will insert an SCTE-104 message. |
-| No | No | No | Encoder may perform some internal action, but will not generate an SCTE-35 message. (e.g. Modify Subtitle delay) |
+([SMPTE.ST2010.2008](https://doi.org/10.5594/SMPTE.ST2010.2008) - multi-operation message).
