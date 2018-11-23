@@ -75,18 +75,24 @@ The Video frames shall be encapsulated using PES per Frame, with the start of a 
 
 #### 3.2. PSI
 
-The MPEG2-TS shall signal the Video component within the PMT by setting the “stream type” to  0x027 and including a “HEVC_video_decsriptor” (See ETSI TS 101 154 v.2.3.1, clause 4.1.8.19a) with the component declaration.
+The MPEG2-TS shall signal the Video component within the PMT by setting the “stream type” to  0x027 and including a
+“HEVC_video_decsriptor” (See ETSI TS 101 154 v.2.3.1, clause 4.1.8.19a) with the component declaration.
 
 
 ## 4. Video Encoding
 
-The Video shall be encoding using HEVC (H265) using the “HEVC Main 10 Profile, Main Tier, Level 5.1” profile. The encoding shall be conformant to that defined by DVB in ETSI TS 101 154 v.2.3.1
+The Video shall be encoding using HEVC (H265) using the “HEVC Main 10 Profile, Main Tier, Level 5.1” profile. The encoding
+shall be conformant to that defined by DVB in ETSI TS 101 154 v.2.3.1
+https://www.etsi.org/deliver/etsi_ts/101100_101199/101154/02.03.01_60/ts_101154v020301p.pdf
 
 #### 4.1. Signaling Transfer Characteristics
 
-HLG10 allows the signaling of “transfer characteristics” to enhance the picture quality. However if this feature is used the picture is unable to be rendered on a standard UHD TV. Therefore to support the maximum number of devices, “transfer characteristics” shall not be used.
+HLG10 allows the signaling of “transfer characteristics” to enhance the picture quality. However if this feature is used the
+picture is unable to be rendered on a standard UHD TV. Therefore to support the maximum number of devices, “transfer
+characteristics” shall not be used.
 
-Note:  In the case of Mezzanine streams do we want to use “transfer Characteristics” as we can control the receiving device, performing the transcode. We should be trying to deliver the highest quality video we can.
+Note:  In the case of Mezzanine streams do we want to use “transfer Characteristics” as we can control the receiving device,
+performing the transcode. We should be trying to deliver the highest quality video we can.
 
 
 ## 5. Audio Encoding
