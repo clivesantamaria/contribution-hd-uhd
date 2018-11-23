@@ -103,4 +103,32 @@ The following delivery mechanisms are being considered:
 ## 7.2  IP Multicast
 
 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+## 8. HD Mezzanine Distribution
+
+Original Document : Simulcast Delivery to Virgin Over IP v1
+https://docs.google.com/presentation/d/1wxBFwKbxcUJg-gIKDacQQ9rA-JISyvyYd0lfxgaci3Q/edit#slide=id.ge8cd77181_0_127
+
+The following delivery mechanisms are being considered:
+
+## 8.1. Video
+
+Resolution: 1920 x 1080
+Codec: H.264
+Profile/Level: HP@4.0
+Bitrate: 25 Mbps CBR
+Frame Rate: 25
+GOP: 50 frames
+Colour: 4:2:0 
+
+## 8.2  Audio
+
+Codec: AAC-LC
+Bitrate: 256 Kbps
+
+## 8.3  Transport
+
+MPEG 2 TS over Multicast UDP/RTP
 
