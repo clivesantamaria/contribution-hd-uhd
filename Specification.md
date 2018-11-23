@@ -104,9 +104,3 @@ The following delivery mechanisms are being considered:
 
 
 
-
-
->> include multiple
-
-
-([SMPTE.ST2010.2008](https://doi.org/10.5594/SMPTE.ST2010.2008) - multi-operation message).
