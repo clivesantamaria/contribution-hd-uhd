@@ -1,4 +1,4 @@
-# UHD Specification
+# HD and UHD Contribution Specification
 
 ## Generic design
 
@@ -108,28 +108,27 @@ The following delivery mechanisms are being considered:
 
 ## 8. HD Mezzanine Distribution
 
-Origination
+Original Document : Simulcast Delivery Over IP v1
+![Figure 1 https://docs.google.com/presentation/d/1wxBFwKbxcUJg-gIKDacQQ9rA-JISyvyYd0lfxgaci3Q/edit#slide=id.ge8cd77181_0_127
+
+
+### 8.1. Origination
 
 The channels will originate at these sites in a pair of redundant racks on ‘red and blue’ paths. The streams are encoded 
 to a mezzanine HD transport stream format at 25Mbps. This will ensure sufficient quality for the subsequent transcoding. 
 
-Distribution
+### 8.2. Distribution
 
 The HD streams will be transported as multicast and distributed over ITV’s private network to the ITV data centres at 
 Greenwich and Slough. The network is self-healing and will re-route streams in the event of circuit or equipment failure.
 
-Hand-off
+### 8.3. Hand-off
 
 The streams will be presented on nominated IP addresses and ports. The client will be required to provision
 connectivity to access the streams.
 
 
-Original Document : Simulcast Delivery Over IP v1
-![Figure 1 https://docs.google.com/presentation/d/1wxBFwKbxcUJg-gIKDacQQ9rA-JISyvyYd0lfxgaci3Q/edit#slide=id.ge8cd77181_0_127
-
-The following delivery mechanisms are being considered:
-
-### 8.1. Video
+### 8.4. Video
 
 Resolution: 1920 x 1080
 Codec: H.264
@@ -139,12 +138,12 @@ Frame Rate: 25
 GOP: 50 frames
 Colour: 4:2:0 
 
-### 8.2  Audio
+### 8.5.  Audio
 
 Codec: AAC-LC
 Bitrate: 256 Kbps
 
-### 8.3  Transport
+### 8.6.  Transport
 
 MPEG 2 TS over Multicast UDP/RTP
 
