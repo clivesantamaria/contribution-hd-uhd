@@ -1,2 +1,2 @@
-# contribution-specification-UHD
-Git repo for ITV specifications for UHD contribution stream
+# contribution-specification-HD-UHD
+Git repo for ITV specifications for HD and UHD contribution streams
