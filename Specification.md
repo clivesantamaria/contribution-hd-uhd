@@ -96,14 +96,16 @@ The Audio shall be encoded as 5.1 Surround sound using AC3 audio.
 
 ## 6. Subtitles
 
+Subtitles if provided shall be represented as DVB-TTML (ETSI EN 303 560 v1.1.1), and delivered as a separate components
+within the Transport Stream. 
 
 
 ## 7. Distribution
 
 The following delivery mechanisms are being considered:
 
-### 7.1. Zixi
-### 7.2  IP Multicast
+#### 7.1. Zixi
+#### 7.2  IP Multicast
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -115,23 +117,25 @@ Original Document : Simulcast Delivery Over IP v1
 ![Figure 1 https://docs.google.com/presentation/d/1wxBFwKbxcUJg-gIKDacQQ9rA-JISyvyYd0lfxgaci3Q/edit#slide=id.ge8cd77181_0_127
 
 
-### 8.1. Origination
+#### 8.1. Origination
 
-The channels will originate at these sites in a pair of redundant racks on ‘red and blue’ paths. The streams are encoded 
+The channels will originate at hosting sites in a pair of redundant racks on ‘red and blue’ paths. The streams are encoded 
 to a mezzanine HD transport stream format at 25Mbps. This will ensure sufficient quality for the subsequent transcoding. 
 
-### 8.2. Distribution
 
-The HD streams will be transported as multicast and distributed over ITV’s private network to the ITV data centres at 
-Greenwich and Slough. The network is self-healing and will re-route streams in the event of circuit or equipment failure.
+#### 8.2. Distribution
 
-### 8.3. Hand-off
+The HD streams will be transported as multicast and distributed over a private network to the data centres acting as points of
+presence. The network is self-healing and will re-route streams in the event of circuit or equipment failure.
+
+
+#### 8.3. Hand-off
 
 The streams will be presented on nominated IP addresses and ports. The client will be required to provision
 connectivity to access the streams.
 
 
-### 8.4. Video
+#### 8.4. Video
 
 Resolution: 1920 x 1080
 Codec: H.264
@@ -141,12 +145,12 @@ Frame Rate: 25
 GOP: 50 frames
 Colour: 4:2:0 
 
-### 8.5.  Audio
+#### 8.5.  Audio
 
 Codec: AAC-LC
 Bitrate: 256 Kbps
 
-### 8.6.  Transport
+#### 8.6.  Transport
 
 MPEG 2 TS over Multicast UDP/RTP
 
