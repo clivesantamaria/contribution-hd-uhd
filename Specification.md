@@ -1,10 +1,10 @@
-# SCTE-104/35 Signalling
+# UHD Specification
 
 ## Generic design
 
 DRAFT  
 Author: Keith Millar  
-Date: 01/05/2018   
+Date: 01/10/2018   
 Version: 0.1  
 
 - [Introduction](./SCTE%20104-35%20Signalling%20Generic%20design.md#1-introduction)
