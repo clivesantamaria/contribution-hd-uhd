@@ -4,9 +4,12 @@
 
 DRAFT  
 Author: Keith Millar  
-Date: 01/10/2018   
+Date: 24/10/2018   
 Version: 0.1  
 
+Formating update: Clive Santamaria
+Date: 23/11/2018   
+Version: 0.2  
 
 
 ## 1. Introduction
@@ -17,8 +20,6 @@ Within a distribution system a single broadcast contribution feed can be used to
 support multiple broadcast feeds. For example a single feed could support a
 simulcast IPTV service, DTT Service and a DTH service, where each broadcast
 service requires a different set of markers.
-
-![Figure 1](https://github.com/ITV/SCTE-Signalling/blob/master/images/Signalling-with-multiple-end-platforms.png)
 
 
 ## 2. Mezzainine Format
