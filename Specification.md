@@ -104,6 +104,7 @@ The Audio shall be encoded as 5.1 Surround sound using AC3 audio.
 
 Subtitles if provided shall be represented as DVB-TTML (ETSI EN 303 560 v1.1.1), and delivered as a separate components
 within the Transport Stream. 
+https://www.etsi.org/deliver/etsi_en/303500_303599/303560/01.01.01_20/en_303560v010101a.pdf
 
 
 ## 7. Distribution
