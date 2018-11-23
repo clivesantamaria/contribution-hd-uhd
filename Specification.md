@@ -11,6 +11,9 @@ Formating update: Clive Santamaria
 Date: 23/11/2018   
 Version: 0.2  
 
+Converted from original internal document 
+https://docs.google.com/document/d/1IRstCMCU3iLHEv_rMMy__LTXxAiHVwKPcE1GUjurrYM/edit#
+
 
 ## 1. Introduction
 This document defines the Mezzanine stream format for the contribution delivery of 
