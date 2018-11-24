@@ -14,10 +14,9 @@ simulcast IPTV service, DTT Service and a DTH service.
 
 ![Figure 1](https://github.com/clivesantamaria/contribution-hd-uhd/blob/master/B2B%20Distribution.png)
 
-Case A in Figure 1 uses HD-SDI is not defined here as it adheres to the SMPTE 292M standard
+Case A in Figure 1 is based on HD-SDI (SMPTE 292M)
 
-IP contribution is defined in Cases B and C defined here for HD and UHD
-
+CompressedIP contribution is defined in Cases B and C defined here for HD and UHD contribution
 
 
 
@@ -26,7 +25,7 @@ IP contribution is defined in Cases B and C defined here for HD and UHD
 ## 1. HD Mezzanine Distribution
 
 Original Document : Simulcast Delivery Over IP v1
-![Figure 1 https://docs.google.com/presentation/d/1wxBFwKbxcUJg-gIKDacQQ9rA-JISyvyYd0lfxgaci3Q/edit#slide=id.ge8cd77181_0_127
+![https://docs.google.com/presentation/d/1wxBFwKbxcUJg-gIKDacQQ9rA-JISyvyYd0lfxgaci3Q/edit#slide=id.ge8cd77181_0_127
 
 
 #### 1.1. Origination
