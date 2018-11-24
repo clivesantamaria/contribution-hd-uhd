@@ -2,6 +2,75 @@
 
 ## Generic design
 
+
+## 0. Introduction
+
+This specification defines the Mezzanine stream format for the contribution delivery of 
+HD and UHD content.
+
+Within a distribution system a single broadcast contribution feed can be used to
+support multiple broadcast feeds. For example a single feed could support a
+simulcast IPTV service, DTT Service and a DTH service.
+
+![Figure 1](https://github.com/clivesantamaria/contribution-hd-uhd/blob/master/B2B%20Distribution.png)
+
+Case A in Figure 1 uses HD-SDI is not defined here as it adheres to the SMPTE 292M standard
+
+IP contribution is defined in Cases B and C defined here for HD and UHD
+
+
+
+
+## SECTION B 
+
+## 1. HD Mezzanine Distribution
+
+Original Document : Simulcast Delivery Over IP v1
+![Figure 1 https://docs.google.com/presentation/d/1wxBFwKbxcUJg-gIKDacQQ9rA-JISyvyYd0lfxgaci3Q/edit#slide=id.ge8cd77181_0_127
+
+
+#### 1.1. Origination
+
+The channels will originate at hosting sites in a pair of redundant racks on ‘red and blue’ paths. The streams are encoded 
+to a mezzanine HD transport stream format at 25Mbps. This will ensure sufficient quality for the subsequent transcoding. 
+
+
+#### 1.2. Distribution
+
+The HD streams will be transported as multicast and distributed over a private network to the data centres acting as points of
+presence. The network is self-healing and will re-route streams in the event of circuit or equipment failure.
+
+
+#### 1.3. Hand-off
+
+The streams will be presented on nominated IP addresses and ports. The client will be required to provision
+connectivity to access the streams.
+
+
+#### 1.4. Video
+
+Resolution: 1920 x 1080
+Codec: H.264
+Profile/Level: HP@4.0
+Bitrate: 25 Mbps CBR
+Frame Rate: 25
+GOP: 50 frames
+Colour: 4:2:0 
+
+#### 1.5.  Audio
+
+Codec: AAC-LC
+Bitrate: 256 Kbps
+
+#### 1.6.  Transport
+
+MPEG 2 TS over Multicast UDP/RTP
+
+
+
+
+## SECTION C 
+
 DRAFT  
 Author: Keith Millar  
 Date: 24/10/2018   
@@ -120,47 +189,4 @@ The following delivery mechanisms are being considered:
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-
-## 8. HD Mezzanine Distribution
-
-Original Document : Simulcast Delivery Over IP v1
-![Figure 1 https://docs.google.com/presentation/d/1wxBFwKbxcUJg-gIKDacQQ9rA-JISyvyYd0lfxgaci3Q/edit#slide=id.ge8cd77181_0_127
-
-
-#### 8.1. Origination
-
-The channels will originate at hosting sites in a pair of redundant racks on ‘red and blue’ paths. The streams are encoded 
-to a mezzanine HD transport stream format at 25Mbps. This will ensure sufficient quality for the subsequent transcoding. 
-
-
-#### 8.2. Distribution
-
-The HD streams will be transported as multicast and distributed over a private network to the data centres acting as points of
-presence. The network is self-healing and will re-route streams in the event of circuit or equipment failure.
-
-
-#### 8.3. Hand-off
-
-The streams will be presented on nominated IP addresses and ports. The client will be required to provision
-connectivity to access the streams.
-
-
-#### 8.4. Video
-
-Resolution: 1920 x 1080
-Codec: H.264
-Profile/Level: HP@4.0
-Bitrate: 25 Mbps CBR
-Frame Rate: 25
-GOP: 50 frames
-Colour: 4:2:0 
-
-#### 8.5.  Audio
-
-Codec: AAC-LC
-Bitrate: 256 Kbps
-
-#### 8.6.  Transport
-
-MPEG 2 TS over Multicast UDP/RTP
 
