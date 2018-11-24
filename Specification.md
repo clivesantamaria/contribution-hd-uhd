@@ -24,7 +24,7 @@ support multiple broadcast feeds. For example a single feed could support a
 simulcast IPTV service, DTT Service and a DTH service, where each broadcast
 service requires a different set of markers.
 
-![Figure 1](https://docs.google.com/a/itv.com/drawings/d/e/2PACX-1vSwpULteDp8qZ61SdgWUyYyr5h7AQd21aXmIcjMY-r_z3c5J13num4Dj8llOYPhggacEKGmFM_ha83p/pub?w=960&h=720)
+![Figure 1](https://github.com/clivesantamaria/contribution-hd-uhd/blob/master/B2B%20Distribution.png)
 
 
 
