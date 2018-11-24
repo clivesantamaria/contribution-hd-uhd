@@ -93,9 +93,6 @@ support multiple broadcast feeds. For example a single feed could support a
 simulcast IPTV service, DTT Service and a DTH service, where each broadcast
 service requires a different set of markers.
 
-![Figure 1](https://github.com/clivesantamaria/contribution-hd-uhd/blob/master/B2B%20Distribution.png)
-
-
 
 ## 2. Mezzainine Format
 The UHD content shall be as follows:
